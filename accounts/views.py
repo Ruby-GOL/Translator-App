@@ -1,14 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 from django.contrib.auth import login,logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
-
-from .forms import SignUpForm, UserLoginForm, ContactForm
-from .models import User
-
+from .forms import SignUpForm, UserLoginForm
 
 User = get_user_model()
 
@@ -46,25 +40,3 @@ def login_request(request):
             messages.error(request,"Invalid username or password.")
     form = UserLoginForm()
     return render(request=request, template_name="main/login.html", context={"login_form":form})
-
-def contact(request):
-	if request.method == 'POST':
-		form = ContactForm(request.POST)
-		if form.is_valid():
-			subject = "Website Inquiry" 
-			body = {
-			'name': form.cleaned_data['name'], 
-			'phone': form.cleaned_data['phone'], 
-			'email': form.cleaned_data['email_address'], 
-			'message':form.cleaned_data['message'], 
-			}
-			message = "\n".join(body.values())
-
-			try:
-				send_mail(subject, message, 'omondiadhinga@gmail.com', ['adhingafredrick@gmail.com']) 
-			except BadHeaderError:
-				return HttpResponse('Invalid header found.')
-			return redirect ("home")
-      
-	form = ContactForm()
-	return render(request, "base.html", {'contact-form':form})

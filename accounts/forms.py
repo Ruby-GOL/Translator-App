@@ -1,13 +1,10 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth.forms import (UserCreationForm, 
                                         UserChangeForm,
                                         AuthenticationForm,
                                         PasswordResetForm,
                                         SetPasswordForm)
-from .models import User, Message
-
  
 User = get_user_model()
 
@@ -104,31 +101,6 @@ class UserChangeForm(UserChangeForm):
         model = User
         fields = ('email',)
 
-class ContactForm(forms.Form):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-    
-    name = forms.CharField(widget=forms.TextInput(attrs={
-        "class": "input",
-        "type": "text",
-        "placeholder": "name"
-    }))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
-        "class": "input",
-        "type": "email",
-        "placeholder": "email"
-    }))
-    phone = forms.CharField(widget=forms.TextInput(attrs={
-        "class": "input",
-        "type": "text",
-        "placeholder": "phone"
-    }))
-
-    message = forms.CharField(widget=forms.TextInput(attrs={
-        "class": "input",
-        "type": "text",
-        "placeholder": "message"
-    }))
 
 
     
