@@ -3,6 +3,12 @@ from .forms import TranslationForm
 from .models import Translation
 from .utils import translate_text, text_to_speech, speech_to_text
 
+# Create your views here.
+def homepage(request):
+    return render(
+                request=request,
+                template_name='index.html')
+
 def index(request):
     if request.method == 'POST':
         form = TranslationForm(request.POST)
@@ -26,8 +32,8 @@ def index(request):
                 translation = Translation(input_text=input_text, translated_text=translated_text, source_language=source_language, target_language=target_language)
                 translation.save()
 
-            return render(request, 'translator/result.html', {'translation': translation})
+            return render(request, 'result.html', {'translation': translation})
     else:
         form = TranslationForm()
 
-    return render(request, 'translator/index.html', {'form': form})
+    return render(request, 'index.html', {'form': form})

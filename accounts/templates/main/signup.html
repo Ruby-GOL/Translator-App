@@ -1,0 +1,84 @@
+{% load static %}
+{% load crispy_forms_tags %}    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <script src="{% static "js/scripts.js"%}" defer></script>
+</head>
+<body>
+
+    <!--messages-->
+    <div class="messages">
+        <img class="message-icon" src="{% static 'icons/sign.svg'%}" alt="error">
+        <div class="message">
+            <h3 class="message-title title">Error</h3>
+            <p class="message-paragraph">Something went wrong!</p>
+        </div>
+        <span class="message-close error">x</span>
+    </div>
+    <!--end messages-->
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        {{ form.errors }}
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="card center spacer">
+            <h1 class="title text-center">Sign Up</h1>
+            <div class="social-login">
+                <button class="social-btn">
+                    <img class="icon" src="{% static "icons/gmail.svg" %}" alt="gmail icon">
+                    Gmail
+                </button>
+                <button class="social-btn">
+                    <img class="icon" src="{% static "icons/facebook.svg" %}" alt="facebook icon">
+                    Facebook
+                </button>
+            </div>                                                                                                                                              
+            <div class="text-center line form-divider">or</div>
+            <form method="POST" class="login-form spacer" id="signup-form" action="{% url 'register' %}">
+                {% csrf_token %}
+                
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static "icons/profile-user.svg"%}" alt="">
+                    {{ register_form.username}}
+                    <!--input required name="username" id="username" type="text" class="form-input" placeholder="john doe" maxlength="16" minlength="6"-->
+                </div>
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static 'icons/envelope.png'%}" alt="">
+                    {{ register_form.email }}
+                    <!--input required name="email" id="email" type="email" class="form-input" placeholder="johndoe@mail.com"-->
+                </div>
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static 'icons/key.svg'%}" alt="">
+                    {{ register_form.password1}}
+                    <!--input required name="password1" id="password1" type="password" class="form-input" placeholder="password" maxlength="22" minlength="8"-->
+                </div>
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static 'icons/key.svg'%}" alt="">
+                    {{ register_form.password2}}
+                    <!--input required name="password2" id="password2" type="password" class="form-input" placeholder=" confirm password" maxlength="22" minlength="8"-->
+                </div>
+                <input style="background-color: blue; color:white" type="submit" class="submit" value="Signup">
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <div class="redirect">
+        Already have an account?&nbsp;<a href="/accounts/login" class="link">Login</a>
+        <br><br>
+        <a href="/accounts/forgot-password" class="link">Forgot password?</a>
+    </div>
+
+
+</body>
+</html>
