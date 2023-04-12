@@ -1,0 +1,55 @@
+{% load static %}
+{% load crispy_forms_tags %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static "css/styles.css"%}">
+    <script src="{% static "js/scripts.js"%}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card center spacer">
+            <h1 class="title text-center">Login With</h1>
+            <div class="social-login">
+                <button class="social-btn">
+                    <img class="icon" src="{% static "icons/gmail.svg"%}" alt="gmail icon">
+                    Gmail
+                </button>
+                <button class="social-btn">
+                    <img class="icon" src="{% static "icons/facebook.svg"%}" alt="gmail icon">
+                    Facebook
+                </button>
+            </div>
+            <div class="text-center line form-divider">or</div>
+            <form method="POST" class="login-form spacer" id="signup-form" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static "icons/envelope.png"%}" alt="">
+                    {{ login_form.username }}
+                    <!--input type="email" class="form-input" placeholder="johndoe@mail.com"-->
+                </div>
+                <div class="input-group">
+                    <img class="icon input-icon" src="{% static "icons/key.svg"%}" alt="">
+                    {{ login_form.password }}
+                    <!--input type="password" class="form-input" placeholder="password"-->
+                </div>
+                <input style="background-color: blue; color:white" type="submit" class="submit" value="Login">
+            </form>
+        </div>
+
+
+    </div>
+
+    <div class="redirect">
+        Don't have an account?&nbsp;<a href="/accounts/register" class="link">Signup</a>
+        <br><br>
+        <a href="/accounts/forgot-password" class="link">Forgot password?</a>
+    </div>
+
+
+</body>
+</html>
