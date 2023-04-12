@@ -1,7 +1,11 @@
+import os
+# from .googletrans_patch import translator
 from django.shortcuts import render
+from .translation import translate, detect_language
+from .speech_to_text import speech_to_text
+from django.core.files.storage import default_storage
 from .forms import TranslationForm
-from .models import Translation
-from .utils import translate_text, text_to_speech, speech_to_text
+
 
 # Create your views here.
 def homepage(request):
@@ -9,31 +13,37 @@ def homepage(request):
                 request=request,
                 template_name='index.html')
 
+
 def index(request):
-    if request.method == 'POST':
-        form = TranslationForm(request.POST)
-        if form.is_valid():
-            input_text = form.cleaned_data['input_text']
-            source_language = form.cleaned_data['source_language']
-            target_language = form.cleaned_data['target_language']
-            output_format = form.cleaned_data['output_format']
-            
-            # Translate text
-            translated_text = translate_text(input_text, source_language, target_language)
-            
-            if output_format == 'audio':
-                # Generate audio
-                audio_file = text_to_speech(translated_text, target_language)
-                # Save the translation
-                translation = Translation(input_text=input_text, translated_text=translated_text, source_language=source_language, target_language=target_language, audio_file=audio_file)
-                translation.save()
-            else:
-                # Save the translation
-                translation = Translation(input_text=input_text, translated_text=translated_text, source_language=source_language, target_language=target_language)
-                translation.save()
+    if request.method == "POST":
+        # Get user input
+        input_text = request.POST.get("input_text", "")
+        target_language = request.POST.get("target_language", "en")
+        audio_file = request.FILES.get("audio_file", None)
 
-            return render(request, 'result.html', {'translation': translation})
+        if audio_file:
+            # Save the uploaded file temporarily
+            file_name = default_storage.save(audio_file.name, audio_file)
+            file_path = default_storage.path(file_name)
+
+            # Convert speech to text
+            input_text = speech_to_text(file_path)
+
+            # Remove the temporary file
+            default_storage.delete(file_path)
+
+        # Detect the input language
+        src_lang = detect_language(input_text)
+
+        # Translate the text
+        translation = translate(input_text, src_lang, target_language)
+
+        context = {"input_text": input_text, "translation": translation, "target_language": target_language}
     else:
-        form = TranslationForm()
+        context = {}
+    form = TranslationForm()
+    context['form'] = form
 
-    return render(request, 'index.html', {'form': form})
+    return render(request, "translate.html", context)
+
+
