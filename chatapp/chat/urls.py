@@ -1,13 +1,13 @@
 from django.urls import path, include
-from . import views
+from chat import views as chat_views
 from django.contrib.auth.views import LoginView, LogoutView
-from translator import views as trans
+
 
 urlpatterns = [
-    path("", views.homepage, name='home'),
-    path("chat/", trans.chatPage, name="chat-page"),
+    path("", chat_views.chatPage, name="chat_page"),
+
+    # login-section
     path("auth/login/", LoginView.as_view
          (template_name="chat/LoginPage.html"), name="login-user"),
     path("auth/logout/", LogoutView.as_view(), name="logout-user"),
-
 ]
