@@ -2,9 +2,11 @@ TRANSLATOR APP
 JAMBOCARE!
 
 OVERVIEW
+
 The Translator App called JAMBOCARE is a mobile application that enables patients and medical professionals to communicate with each other in real-time, regardless of language barriers. With the app, patients can easily communicate their symptoms to medical professionals, while medical professionals can ask questions and provide instructions to patients in their native language. The app is designed to be user-friendly and accessible to all, and it supports a wide range of local languages
 
 FEATURES OF THE APP
+
 1.Real-time translation of spoken language
 2.Real-time translation of written language
 3.Support for multiple languages,example English,Kiswahili Kikuyu,Luo,Luhya and Kalenjin
@@ -14,18 +16,23 @@ FEATURES OF THE APP
 7.Secure and private communication
 
 GETTING STARTED
+
 To get started with JAMBOCARE, simply download the app from the App Store or Google Play Store. Once you have installed the app, follow the setup instructions to select your preferred languages and set up your account. From there, you can start using the app to communicate with your medical professionals or patients.
 
 USAGE
+
 To use JAMBOCARE, simply open the app and select the language you wish to translate from and the language you wish to translate to. Then, either type or speak the message you wish to translate, and the app will provide an instant translation. You can then respond in your preferred language, and the app will translate your response back to the other language.
 
 OFFLINE MODE
+
 In situations where internet access is limited,JAMBOCARE offers an offline mode that allows you to continue using the app for basic communication. However, please note that the accuracy of translations may be affected in offline mode.
 
 PRIVACY AND SECURITY
+
 JAMBOCARE takes your privacy and security seriously. All communications through the app are encrypted, and your personal information is never shared with third parties.
 
 SUPPORT
+
 If you have any questions or issues with the App, please contact our support team at support@JAMBOCARE.com.
 Thank you for choosing JAMBOCARE! We hope that our app will make communication easier and more effective for patients and medical professionals alike.
 
@@ -37,6 +44,7 @@ Thank you for choosing JAMBOCARE! We hope that our app will make communication e
 - [@Melpositivity](https://www.github.com/Melpositivity)
 
 FEATURES OF THE APP
+
 1.Real-time translation of spoken language
 2.Real-time translation of written language
 3.Support for multiple languages,example English,Kiswahili Kikuyu,Luo,Luhya and Kalenjin
@@ -48,7 +56,7 @@ FEATURES OF THE APP
 ## Tech Stack
 
 **FRONTEND:** HTML,JS,CSS
-**BACKEND:** DJANGO,MYSQL,PYTHON
+**BACKEND:** DJANGO,MYSQL,PYTHON,C#
 
 ## Support
 
