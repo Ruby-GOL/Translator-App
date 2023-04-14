@@ -9,12 +9,19 @@ The Translator App called JAMBOCARE is a mobile application that enables patient
 FEATURES OF THE APP
 
 1.Real-time translation of spoken language
+
 2.Real-time translation of written language
+
 3.Support for multiple languages,example English,Kiswahili Kikuyu,Luo,Luhya and Kalenjin
+
 4.Easy-to-use interface
+
 5.Offline mode for situations with limited internet access
+
 6.Voice-to-text and text-to-voice capabilities
+
 7.Secure and private communication
+
 
 GETTING STARTED
 
