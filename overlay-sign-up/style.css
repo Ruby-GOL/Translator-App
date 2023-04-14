@@ -1,0 +1,172 @@
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.19);
+  padding: 50px 30px;
+  border-radius: 10px;
+  min-width: 800px;
+  max-width: 100px;
+  min-height: 500px;
+  display: flex;
+  margin: 0 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .form {
+  position: absolute;
+  top: 0;
+  align-items: center;
+  padding: 0 20px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f5f7;
+  overflow: hidden;
+}
+.container .form.sign-in-form {
+  left: 0;
+}
+.container .form.sign-up-form {
+  right: 0;
+}
+.container .form .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: .7s ease-in-out transform;
+}
+.container .form.sign-in-form  .wrapper{
+    transform: translateX(100%);
+}
+.container .form.sign-in-form.active .wrapper{
+    transform: translateX(0);
+}
+.container .form.sign-up-form  .wrapper{
+    transform: translateX(-100%);
+}
+.container .form.sign-up-form.active .wrapper{
+    transform: translateX(0);
+}
+.container .form h1 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.container.form p {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+.container .form input {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  height: 40px;
+  font-family: "Roboto";
+  font-size: 15px;
+  border: none;
+  background-color: rgba(199, 197, 197, 0.425);
+  outline: none;
+  padding-left: 15px;
+}
+.container .overlay button,
+.container .form button {
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  font-family: "Roboto";
+  font-size: 18px;
+  background-color: #384DAA;
+  color: #f6f5f7;
+  cursor: pointer;
+}
+.overlay-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #384DAA;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: .7s ease-in-out transform;
+}
+.container .overlay-container .overlay {
+  background-image: url("/images/communication.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 1;
+  transition: .7s ease-in-out transform;
+}
+.container .overlay-container .overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #384DAA;
+  opacity: 0.8;
+  z-index: -1;
+}
+.container .overlay .overlay-left,
+.container .overlay .overlay-right {
+  flex-basis: 50%;
+  text-align: center;
+}
+.container .overlay h1 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+}
+.container .overlay p {
+  font-family: "Roboto";
+  font-size: 25px;
+  font-weight: 300;
+  color: white;
+}
+.container .overlay button {
+  background-color: white;
+  color: #384DAA;
+  margin-top: 20px;
+}
