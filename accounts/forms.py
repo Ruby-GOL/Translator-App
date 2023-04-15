@@ -101,6 +101,16 @@ class UserChangeForm(UserChangeForm):
         model = User
         fields = ('email',)
 
+class PatientRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
 
+    class Meta:
+        model = User
+        fields = ['email', 'name', 'password']
 
-    
+class DoctorRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['email', 'name', 'password']

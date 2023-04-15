@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login form</title>
-    <link rel="stylesheet" href="/overlay-login/style.css" />
+    <link rel="stylesheet" href="{% static 'css/login.css ' %}" />
+    
   </head>
   <body>
     <section>
       <div class="container">
         <div class="form sign-in-form">
           <div class="wrapper">
-            <form action="#">
+            <form action="#" method="post">
                 <h1>Sign Up</h1>
-                <p>please, provide all details to create an account</p>
-                <input type="text" placeholder="Full Name" />
-                <input type="email" placeholder="email" />
-                <input type="password" placeholder="password" />
-                <button type="submit">Sign Up</button>
+                <p>please, provide all details to create an account</p>                
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="hidden" name="user_type" value="doctor">
+                  <button type="submit">Sign Up as a Doctor</button>              
               </form>
            
           </div>
@@ -26,12 +28,16 @@
         <div class="form sign-up-form active">
             
           <div class="wrapper">
-            <form action="#">
+            <form action="#" method="post">
                 <h1>sign in</h1>
                 <p>use your email and password to sign in</p>
-                <input type="email" placeholder="email" />
-                <input type="password" placeholder="password" />
-                <button type="submit">Sign In</button>
+                {% csrf_token %}
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign in</button>
               </form>
           </div>
         </div>
@@ -52,6 +58,6 @@
         </div>
       </div>
     </section>
-    <script src="/overlay-login/main.js"></script>
+    <script src=" {% static 'js/main.js' %}"></script>
   </body>
 </html>
