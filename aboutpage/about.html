@@ -8,58 +8,64 @@
     <link rel="stylesheet" href="/aboutpage/about.css" />
   </head>
   <body>
+    <!-----about section start---->
    
-    <!-----service section start---->
-    <div class="service">
-      <div class="title">
-        <h2>About us</h2>
-      </div>
+    <section>
+      <div class="grid">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/images/doc.jpg" alt="" />
+            <div class="card-content">
+              <h1 class="card-header">Improved access to care</h1>
 
-      <div class="box">
-        <div class="card">
-          <i class="fa-solid fa-bars-filter"></i>
-          <h5>Break language barrier</h5>
-          <div class="pra">
-            <p>
-              ●To improve the quality of care and patient satisfaction by
-              facilitating effective communication and mutual understanding
-              between patients and health workers. 
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="#">Read More</a>
-            </p>
+              <p class="card-text">
+                The app enables patients who face language barriers to seek
+                medical attention and receive the care they need, improving
+                access to care and reducing health disparities.
+              </p>
+              <button class="card-btn">MORE<span>&rarr;</span></button>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <i class="fa-solid fa-user"></i>
-          <h5>Medical documentation:</h5>
-          <div class="pra">
-            <p>
-              To dictate medical notes, reports, and other documentation. This
-              can save time for healthcare professionals who would otherwise
-              need to type out the information.
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="#">Read More</a>
-            </p>
+
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/images/translate.webp" alt="" />
+            <div class="card-content">
+              <h1 class="card-header">Increased Satisfaction</h1>
+
+              <p class="card-text">
+                The app empowers patients by enabling them to communicate their
+                health concerns effectively and participate actively in their
+                care, increasing patient satisfaction and trust.
+              </p>
+              <button class="card-btn">MORE<span>&rarr;</span></button>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <i class="fa-solid fa-bell"></i>
-          <h5>Training and education:</h5>
-          <div class="pra">
-            <p>
-              To create educational materials and training programs for
-              healthcare professionals. This can be particularly useful for
-              those who are learning a new language or working in a multilingual
-              environment.
-            </p>
-            <p style="text-align: center">
-              <a class="button" href="#">Read More</a>
-            </p>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/images/getty.jpg" alt="" />
+            <div class="card-content">
+              <h1 class="card-header">Enhanced quality of care</h1>
+
+              <p class="card-text">
+                The app enables healthcare professionals to communicate
+                effectively with their patients, reducing the risk of medical
+                errors and improving patient outcomes.
+              </p>
+              <button class="card-btn">MORE<span>&rarr;</span></button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <script src="text/javascript">
+      // header sticky
+      window.addEventListener("scroll", function(){
+        var header= document.querySelector("header");
+        header.classList.toggle("sticky" , window.scrollY >0);
+      })
+    </script>
   </body>
 </html>

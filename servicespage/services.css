@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 * {
   margin: 0;
@@ -10,6 +11,64 @@ html{
 }
 body {
   background: #1c1e20f5;
+  min-height: 200vh;
+}
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
+}
+header.sticky{
+  padding: 5px 100px;
+  background: rgba(255, 255, 255, 0.26);
+}
+header .logo{
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.6s;
+}
+header ul{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul li{
+  position: relative;
+  list-style: none;
+}
+header ul li a{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500px;
+  transition: 0.5s;
+ 
+}
+header .sticky .logo,
+header .sticky ul li a{
+  color: #000;
+}
+.banner{
+position: relative;
+width: 100%;
+height: 10%;
+background: url("/images/black-background.htm");
+background-size: cover;
 }
 section {
   position: relative;
@@ -29,6 +88,7 @@ section {
 .main-title {
   font-size: 2em;
   margin-bottom: 50px;
+  color: rgb(3,155,202);
 }
 .content {
   position: relative;
@@ -39,7 +99,7 @@ section {
 }
 .content .image {
   width: 800px;
-  height: 400px;
+  height: 350px;
   position: relative;
   overflow: hidden;
 }
@@ -56,18 +116,20 @@ section {
 .content .text-box {
   z-index: 222;
   background: rgba(255, 255, 255, 0.26);
-  /* backdrop-filter:blur(20px) ; */
-  padding: 40px;
+  
+  padding: 50px;
   max-width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  transform: translate(-80px, 50px);
-  text-align: center;
+  transform: translate(-0px, 50px);
+  text-align:right;
 }
 .content .text-box h3{
     font-size: 2em;
     margin-bottom: 10px;
+ 
 }
+
 .media-icons{
     margin-top: 100px;
 }
@@ -79,6 +141,7 @@ section {
 .second-title{
     font-size: 3em;
     margin-bottom: 80px;
+    color: rgb(3,155,202);
 }
 .info-title{
     font-size: 1.8em;

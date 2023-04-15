@@ -13,12 +13,22 @@
     <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
+<header>
+  <a href="#" class="logo">lOGO</a>
+  <ul>
+    <li><a href="/landing page/landing.html">Home</a></li>
+    <li><a href="/aboutpage/about.html">About Us</a></li>
+    <li><a href="/servicespage/services.html">Services</a></li>
+    
+  </ul>
+</header>
+<section class="banner"></section>
     <section class="sec-04">
       <div class="container">
         <h2 class="main-title">Speech-to-Text and Text-to-Speech</h2>
         <div class="content">
           <div class="image">
-            <img src="/images/insurance 2.jpg" alt="" />
+            <img src="/images/git.jpg" alt="" />
           </div>
           <div class="text-box">
             <h3>Speech/Text translation</h3>
@@ -61,7 +71,7 @@
     <!-- should change -->
     <section class="sec-01">
       <div class="container">
-        <h2 class="main-title">OUR SERVICES</h2>
+        <h2 class="main-title">Still in Implementation</h2>
         <div class="content">
           <div class="image">
             <img src="/images/insurance 2.jpg" alt="" />
@@ -113,12 +123,18 @@
             </li>
           </div>
           <div class="image">
-            <img src="/images/insurance.jpg" alt="" />
+            <img src="/images/help.jpg" alt="" />
           </div>
         </div>
       </div>
     </section>
     <script>
+
+      // header sticky
+      window.addEventListener("scroll", function(){
+        var header= document.querySelector("header");
+        header.classList.toggle("sticky" , window.scrollY >0);
+      })
       // common reveal options to create reveal animations
       ScrollReveal({
         // reset: true,
