@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translation App</title>
+    <link rel="stylesheet" href="{% static 'css/translate.css' %}">
+    <script src="{% static 'js/translate.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Language Translation App</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <!-- Add record and stop buttons -->
+            <button id="record" type="button">Start Recording</button>
+            <button id="stop" type="button" disabled>Stop Recording</button>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <!-- Add an audio element to preview the recorded audio -->
+            <audio id="audio" controls></audio>
+            <button type="submit">Translate</button>
+        </form>
+        {% if input_text %}
+        <div class="translation-result">
+            <h3>Original Text:</h3>
+            <p>{{ input_text }}</p>
+            <h3>Translated Text:</h3>
+            <p>{{ translation }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
