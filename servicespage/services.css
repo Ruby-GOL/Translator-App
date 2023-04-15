@@ -5,9 +5,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
-  background: #111222;
+  background: #27292bf5;
 }
 section {
   position: relative;
@@ -53,13 +55,14 @@ section {
 }
 .content .text-box {
   z-index: 222;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.26);
   /* backdrop-filter:blur(20px) ; */
   padding: 40px;
   max-width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   transform: translate(-80px, 50px);
+  text-align: center;
 }
 .content .text-box h3{
     font-size: 2em;
@@ -82,14 +85,32 @@ section {
     margin-bottom: 10px;
 }
 .info{
-    /* width: 500px;
-    margin-left: 50px; */
-    z-index: 222;
-    background: rgba(255, 255, 255, 0.1);
-    /* backdrop-filter:blur(20px) ; */
-    padding: 40px;
-    max-width: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transform: translate(-80px, 50px);
+    width: 500px;
+    margin-left: 50px; 
+   
+}
+.media-info{
+  width: 400px;
+  margin-left: 50px;
+}
+.media-info li{
+  list-style: none;
+  font-size: 1.4em;
+}
+.media-info li a{
+  color: #fff;
+  text-decoration: none;
+ 
+}
+.media-info li:not(:last-child){
+  margin-bottom: 50px;
+}
+.media-info li:nth-child(1), .media-info li:nth-child(5){
+  padding-left: 100px;
+}
+.media-info li:nth-child(2), .media-info li:nth-child(4){
+  padding-left: 50px;
+}
+.sec-03{
+margin-bottom: 100px;
 }

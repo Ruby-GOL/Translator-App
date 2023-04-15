@@ -2,6 +2,11 @@
 
 body {
   background-color: white;
+  /* background-image: url("/images/hospital.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 nav {
   display: flex;
