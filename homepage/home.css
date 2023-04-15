@@ -8,7 +8,7 @@ body{
  
 }
 .wrapper{
-  background-color: #3f4245f5;
+  background-color: rgb(69,70,74);
 }
 header{
   position:fixed;
@@ -67,8 +67,8 @@ header .social a{
   transition: all ease 0.5s;
 }
 header .social a:hover{
-  background-color: #36d2c7;
-  box-shadow: -5px 10px 40px #36d2c7;
+  background-color: #309E70;
+  box-shadow: -5px 10px 40px #309E70;
   color: #fff;
 }
 .banner{
@@ -78,7 +78,7 @@ header .social a:hover{
   width: 55%; 
   height: 100%;
   float: left;
-  background-color: #36d2c7;
+  background-color: #309E70;
   padding: 100px 70px 0;
   display: flex;
   align-items: center;
@@ -117,6 +117,7 @@ header .social a:hover{
   text-align: center;
   margin-top: 60px;
 }
+
 .text-inner a{
   color: #fff;
 }
@@ -125,7 +126,7 @@ header .social a:hover{
   background-color: #FFF;
 }
 .img{
-  width: 35%;
+  width:35%;
   float: left;
   display: flex;
   align-items: center;
@@ -134,6 +135,9 @@ header .social a:hover{
 }
 .img-inner{
   position: relative;
+}
+.img-inner img{
+  width: 400px;
 }
 .info-dot{
   position: absolute;
@@ -152,7 +156,7 @@ right: 30px;
   width: 40px;
   height: 40px;
   line-height: 40px ;
-  background-color: #36d2c7;
+  background-color: #309E70;
   border: none;
   border-radius: 50px;
   font-size: 16px;
