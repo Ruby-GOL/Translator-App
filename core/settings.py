@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # External Apps
     'allauth',
+    'channels',
     #'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     # Local apps
     "translator",
     "accounts",
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +101,17 @@ AUTHENTICATION_BACKENDS = [
     # 'allauth.account.auth_backends.AuthenticationBackend',
     ]
 
+# Django Channels Configuration
+ASGI_APPLICATION = 'myproject.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -144,3 +157,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
     ]
+
+MEDIA_URL = '/media/'
