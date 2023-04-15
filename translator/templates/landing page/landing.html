@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing page</title>
-    <link rel="stylesheet" href="/landing page/landing.css" />
+    <link rel="stylesheet" href="{% static 'css/landing.css'%}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,31 +18,38 @@
       <header>
         <a href="#"
           ><img
-            src="/images/logosmart.jpeg "
+            src="{% static 'images/logosmart.jpeg'%} "
             height="100px"
             width="100px"
             alt=""
             class="logo"
         /></a>
         <ul>
-          <li><a href="/homepage/home.html">HOME</a></li>
-          <li><a href="/aboutpage/about.html">ABOUT US</a></li>
-          <li><a href="/servicespage/services.html">SERVICES</a></li>
-
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about">ABOUT US</a></li>
+          <li><a href="/services">SERVICES</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+             {{user.username}}
+         <li class="nav-item">
+             <a class="nav-link" href="/accounts/logout">Sign out</a>
+         </li>
+          {% else %}
           <div class="dropdown">
-            <a href="/overlay-sign-up/index.html" class="btn">SIGN UP</a>
+            <a href="/accounts/register/" class="btn">SIGN UP</a>
             <div class="dropdown-content">
-              <a href="/overlay-sign-up/index.html">Doctor</a>
-              <a href="/overlay-sign-up/index.html">Patient</a>
+              <a href="/accounts/register-doc/">Doctor</a>
+              <a href="/accounts/register-patient/">Patient</a>
             </div>
           </div>
           <div class="dropdown">
-            <a href="/overlay-login/index.html" class="btn">LOGIN</a>
+            <a href="/accounts/login/" class="btn">LOGIN</a>
             <div class="dropdown-content">
-              <a href="/overlay-login/index.html">Doctor</a>
-              <a href="/overlay-login/index.html">Patient</a>
+              <a href="/accounts/doc-login/">Doctor</a>
+              <a href="/accounts/patient-login/">Patient</a>
             </div>
           </div>
+          {% endif%}          
         </ul>
       </header>
       <div class="content">
@@ -53,12 +61,12 @@
             viceversa to assist healthworkers from every corner of the world in
             communication with Patients from different language
             backgrounds/dialect regions </p>
-            <a href="/homepage/home.html">GET STARTED</a>
+            <a href="/home">GET STARTED</a>
          
         </div>
 
         <div class="imgBox">
-          <img src="/images/doctor003.jpg" class="doctor" alt="" />
+          <img src="{% static 'images/doctor003.jpg' %}" class="doctor" alt="" />
         </div>
       </div>
      

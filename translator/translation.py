@@ -1,6 +1,5 @@
 import torch
 from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
-
 from langdetect import detect
 
 def load_m2m100_model():
