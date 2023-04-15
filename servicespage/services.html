@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/servicespage/services.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+    <section class="sec-04">
+      <div class="container">
+        <h2 class="main-title">Speech-to-Text and Text-to-Speech</h2>
+        <div class="content">
+          <div class="image">
+            <img src="/images/insurance 2.jpg" alt="" />
+          </div>
+          <div class="text-box">
+            <h3>Speech/Text translation</h3>
+            <p>
+              The speech-to-text and text-to-speech functionalities could be
+              integrated into each feature, allowing users to input text or
+              speech and display the results of speech-to-text or text-to-speech
+              conversion. For example, the user could speak their insurance
+              policy number, and the application would convert it to text and
+              display it on the screen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- change everything -->
+    
+    <section class="sec-02">
+      <div class="container">
+        <h2 class="second-title">What we offer;</h2>
+
+        <div class="content">
+          <div class="image">
+            <img src="/images/emergency.jpg" alt="" />
+          </div>
+          <div class="info">
+            <h4 class="info-title">Emergency Services</h4>
+            <p>
+              If the user selects the Emergency Services feature, the
+              application could present a screen with a list of emergency
+              service providers such as ambulance, police, or fire department.
+              Each provider could be represented by a card that displays their
+              contact information and location. The user could have the option
+              to call for help directly from the application.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- should change -->
+    <section class="sec-01">
+      <div class="container">
+        <h2 class="main-title">OUR SERVICES</h2>
+        <div class="content">
+          <div class="image">
+            <img src="/images/insurance 2.jpg" alt="" />
+          </div>
+          <div class="text-box">
+            <h3>Insurance Wallet</h3>
+            <p>
+              If the user selects the Insurance Wallet feature, the application
+              could present a screen with a list of the user's insurance
+              policies. Each policy could be represented by a card that displays
+              the policy number, coverage details, and any pending claims. The
+              user could also have the option to add new policies, submit
+              claims, and make payments.
+            </p>
+          </div>
+        </div>
+        <div class="media-icons">
+          <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+    <section class="sec-03">
+      <div class="container">
+        <h3 class="second-title">Help and support</h3>
+        <div class="content">
+          <div class="media-info">
+            <li>
+              <a href="#" class="icon"
+                ><i class="fab fa-facebook"></i>Facebook</a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon"
+                ><i class="fab fa-instagram"></i>Instagram</a
+              >
+            </li>
+            <li>
+              <a href="#" class="icon"><i class="fab fa-twitter"></i></a>Twitter
+            </li>
+            <li>
+              <a href="#" class="icon"><i class="fab fa-youtube"></i></a>Youtube
+            </li>
+            <li>
+              <a href="#" class="icon"><i class="fab fa-linkedin"></i></a
+              >Linkedin
+            </li>
+          </div>
+          <div class="image">
+            <img src="/images/insurance.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // common reveal options to create reveal animations
+      ScrollReveal({
+        // reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      // traget elements, and specify options to create reveal animations
+      ScrollReveal().reveal(".main-title, .second-title, .info-title", {
+        delay: 500,
+        origin: "left",
+      });
+      ScrollReveal().reveal(".sec-01 .image,.sec-04 .image, .info", {
+        delay: 600,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".text-box", { delay: 700, origin: "right" });
+      ScrollReveal().reveal(".media-icons i", {
+        delay: 500,
+        origin: "bottom",
+        interval: 200,
+      });
+      ScrollReveal().reveal(".sec-02 .image, .sec-03 .image", {
+        delay: 500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".media-info li", {
+        delay: 500,
+        origin: "left",
+        interval: 200,
+      });
+    </script>
+  </body>
+</html>
