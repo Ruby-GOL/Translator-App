@@ -8,11 +8,17 @@ from .forms import TranslationForm
 
 
 # Create your views here.
-def homepage(request):
-    return render(
-                request=request,
-                template_name='index.html')
 
+def landing_page(request):
+    return render(request=request,template_name='landing page/landing.html')
+def homepage(request):
+    return render(request=request,template_name='homepage/home.html')
+
+def about(request):
+    return render(request=request,template_name='aboutpage/about.html')
+
+def services(request):
+    return render(request=request,template_name='servicespage/services.html')
 
 def index(request):
     if request.method == "POST":

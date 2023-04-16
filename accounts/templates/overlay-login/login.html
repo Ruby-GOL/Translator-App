@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+    <link rel="stylesheet" href="{% static 'css/login.css ' %}" />
+    
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="form sign-in-form">
+          <div class="wrapper">
+            <form action="#" method="post">
+                <h1>Sign Up</h1>
+                <p>please, provide all details to create an account</p>                
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="hidden" name="user_type" value="doctor">
+                  <button type="submit">Sign Up as a Doctor</button>              
+              </form>
+           
+          </div>
+        </div>
+        <div class="form sign-up-form active">
+            
+          <div class="wrapper">
+            <form action="#" method="post">
+                <h1>sign in</h1>
+                <p>use your email and password to sign in</p>
+                {% csrf_token %}
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Sign in</button>
+              </form>
+          </div>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-left">
+                <h1>Welcome back</h1> 
+              <p>or</p>
+              <button id="signInButton">Create an account</button>
+            </div>
+            <div class="overlay-right">
+              <h1>Welcome </h1>
+              <p>or</p>
+              <button id="signUpButton">Log in</button>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src=" {% static 'js/main.js' %}"></script>
+  </body>
+</html>
