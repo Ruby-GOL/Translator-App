@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/servicespage/services.css" />
+    <link rel="stylesheet" href="{% static 'css/services.css'%}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -28,7 +29,8 @@
         <h2 class="main-title">Speech-to-Text and Text-to-Speech</h2>
         <div class="content">
           <div class="image">
-            <img src="/images/git.jpg" alt="" />
+            <img src="{% static 'images/git.jpg' %}" alt="" />
+            <img src="{% static 'images/git.jpg' %}" alt="" />
           </div>
           <div class="text-box">
             <h3>Speech/Text translation</h3>
@@ -52,7 +54,7 @@
 
         <div class="content">
           <div class="image">
-            <img src="/images/emergency.jpg" alt="" />
+            <img src="{% static 'images/emergency.jpg' %}" alt="" />
           </div>
           <div class="info">
             <h4 class="info-title">Emergency Services</h4>
@@ -74,7 +76,7 @@
         <h2 class="main-title">Still in Implementation</h2>
         <div class="content">
           <div class="image">
-            <img src="/images/insurance 2.jpg" alt="" />
+            <img src="{% static 'images/insurance 2.jpg' %}" alt="" />
           </div>
           <div class="text-box">
             <h3>Insurance Wallet</h3>
@@ -123,7 +125,11 @@
             </li>
           </div>
           <div class="image">
+<<<<<<< HEAD:servicespage/services.html
             <img src="/images/help.jpg" alt="" />
+=======
+            <img src="{% static 'images/insurance.jpg' %}" alt="" />
+>>>>>>> 39dbea139f0ab081ebf6306bfb39bb42bcf57b71:translator/templates/servicespage/services.html
           </div>
         </div>
       </div>

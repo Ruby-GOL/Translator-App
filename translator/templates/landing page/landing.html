@@ -1,11 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD:landing page/landing.html
     <title>Home page</title>
     <link rel="stylesheet" href="/landing page/landing.css" />
+=======
+    <title>Landing page</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css'%}" />
+>>>>>>> 39dbea139f0ab081ebf6306bfb39bb42bcf57b71:translator/templates/landing page/landing.html
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,6 +21,7 @@
   <body>
     <div class="wrapper">
       <header>
+<<<<<<< HEAD:landing page/landing.html
         <div class="logo"></div>
         <div class="menu">
           <ul>
@@ -26,6 +33,74 @@
         <div class="social">
           <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
           <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+=======
+        <a href="#"
+          ><img
+            src="{% static 'images/logosmart.jpeg'%} "
+            height="100px"
+            width="100px"
+            alt=""
+            class="logo"
+        /></a>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="/about">ABOUT US</a></li>
+          <li><a href="/services">SERVICES</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+             {{user.username}}
+         <li class="nav-item">
+             <a class="nav-link" href="/accounts/logout">Sign out</a>
+         </li>
+          {% else %}
+          <div class="dropdown">
+            <a href="/accounts/register/" class="btn">SIGN UP</a>
+            <div class="dropdown-content">
+              <a href="/accounts/register/doctor/">Doctor</a>
+              <a href="/accounts/register/patient/">Patient</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="/accounts/login/" class="btn">LOGIN</a>
+            <div class="dropdown-content">
+              <a href="/accounts/login/">Doctor</a>
+              <a href="/accounts/login/">Patient</a>
+            </div>
+          </div>
+          {% endif%}          
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>Understanding <br /><span><span class="mdl">Every</span> Voice</span></h2>
+          <!-- <img src="/images/middle.jpg" alt=""> -->
+          <p> <span>Jambo Care</span>
+            mission is to understand every voice. Translating speech to text and
+            viceversa to assist healthworkers from every corner of the world in
+            communication with Patients from different language
+            backgrounds/dialect regions </p>
+            <a href="/home">GET STARTED</a>
+         
+        </div>
+
+        <div class="imgBox">
+          <img src="{% static 'images/doctor003.jpg' %}" class="doctor" alt="" />
+        </div>
+      </div>
+     
+      <div class="media-info">
+        <li>
+          <a href="#" class="icon"
+            ><i class="fab fa-facebook"></i></a
+          >
+        </li>
+        <li>
+          <a href="#" class="icon"
+            ><i class="fab fa-instagram"></i></a
+          >
+        </li>
+        <li>
+>>>>>>> 39dbea139f0ab081ebf6306bfb39bb42bcf57b71:translator/templates/landing page/landing.html
           <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
           <a href="#" class="icon"><i class="fab fa-youtube"></i></a>
         </div>
