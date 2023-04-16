@@ -111,3 +111,7 @@ Any additional information goes here
 #### add(num1, num2)
 
 Takes two numbers and returns the sum.
+
+## Speech to text functionality
+
+this outputs speech input in text form letting the healtworkers understand what the patient(from different dialect)is saying.

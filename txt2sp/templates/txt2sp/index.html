@@ -1,0 +1,15 @@
+
+<head><title> This is a Text Synthesizer </title></head>
+
+
+<form method="POST" action="">
+  {% csrf_token %}
+  {{ Form.as_p }}
+  <input type="submit" value="Submit">
+</form>
+
+
+<audio controls>
+  <source src="{{ dir }}" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
