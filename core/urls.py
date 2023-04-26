@@ -9,7 +9,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     # path('accounts/', include('allauth.urls')),
     # path to txt2speech
-    path('txt2sp/', include('txt2sp.urls'))
+    path('txt2sp/', include('txt2sp.urls')),
     path('chat/', include('stori.urls')),
 
 ]
